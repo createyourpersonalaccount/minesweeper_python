@@ -12,6 +12,10 @@ The git commits of the project should follow the conventions of [Conventional Co
 
 The code should be formatted with [black](https://black.readthedocs.io/en/stable/).
 
+The versioning follows the conventions of [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
+
+Commits intended for release should be tagged.
+
 ## Architecture
 
 The file architecture of the project is explained in `ARCHITECTURE.md`.
