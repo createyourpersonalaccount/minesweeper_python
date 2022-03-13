@@ -16,14 +16,19 @@
 
 import sys
 import pygame
-from config import gameConfig
 
 def runGame(config):
     pygame.init()
-    screen = pygame.display.set_mode((config.screen_resolution))
+    pygame.display.set_caption(config.name)
+    screen = pygame.display.set_mode(config.screen_resolution)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 sys.exit()
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                sys.exit()
         screen.fill(config.bg_color)
         pygame.display.flip()
+        pygame.display.update()
+        clock = config.clock.tick(1)
+        print(clock)

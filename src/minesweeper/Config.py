@@ -18,8 +18,10 @@ import pygame
 
 class gameConfig:
     def __init__(self):
+        self.fps = 60
         self.screen_width = 600
         self.screen_height = 400
         self.screen_resolution = (self.screen_width, self.screen_height)
         self.bg_color = pygame.Color(100, 100, 100)
-        self.fps = 60
+        self.clock = pygame.time.Clock()
+        self.name = "Minesweeper"
