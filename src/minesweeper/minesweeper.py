@@ -17,15 +17,7 @@
 import sys
 import pygame
 from config import gameConfig
+from __init__ import runGame
 
-def runGame():
-    pygame.init()
-    config = gameConfig()
-    screen = pygame.display.set_mode((config.screen_resolution))
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-        screen.fill(config.bg_color)
-        pygame.display.flip()
-runGame()
+config = gameConfig()
+runGame(config)

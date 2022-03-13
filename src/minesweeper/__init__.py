@@ -17,3 +17,13 @@
 import sys
 import pygame
 from config import gameConfig
+
+def runGame(config):
+    pygame.init()
+    screen = pygame.display.set_mode((config.screen_resolution))
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+        screen.fill(config.bg_color)
+        pygame.display.flip()
