@@ -16,4 +16,4 @@
 
 import sys
 import pygame
-from config import Config
+from config import gameConfig
