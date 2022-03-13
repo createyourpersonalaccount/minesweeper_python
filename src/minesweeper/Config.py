@@ -1,11 +1,9 @@
-import sys
-import pygame
+
+from ctypes.wintypes import RGB
+
 class Config:
     def __init__(self):
+        self.screen_width = 1200
+        self.screen_height = 800
+        self.bg_color = RGB(0, 0, 0)
         self.fps = 60
-        self.width = 300
-        self.height = 200
-        self.resolution = (self.width, self.height)
-        self.bg_color = pygame.Color(100, 100, 100)
-        self.name = "Minesweeper"
-
