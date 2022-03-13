@@ -1,4 +1,5 @@
 # Copyright (C) 2022  Nikolaos Chatzikonstantinou <nchatz314@gmail.com>
+# Copyright (C) 2022  Nikolaos Zevgolis <nzevgolisda@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -14,18 +15,13 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import pygame
-pygame.init()
-win = pygame.display.set_mode((500,500))
-pygame.display.set_caption("Minesweeper")
-run = True
-while run:
-    pygame.time.delay(100)
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_q]:
-        pygame.quit()
-    win.fill((0,0,0))  # Fills the screen with black
-    pygame.display.update() 
-pygame.quit()
+from config import Config
+from __init__ import runGame
+
+config = Config()
+runGame(config)
+"""This should be in a function called runGame that takes as argument a configuration class 
+that contains the window size. """
+
+"""Use clock.tick() to set the framerate to 60 fps. See the pygame example https://github.com/pygame/pygame/blob/main/examples/chimp.py as well."""
+
