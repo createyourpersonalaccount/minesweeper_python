@@ -14,11 +14,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-from ctypes.wintypes import RGB
+import pygame
 
 class gameConfig:
     def __init__(self):
-        self.screen_width = 1200
-        self.screen_height = 800
-        self.bg_color = RGB(0, 0, 0)
+        self.screen_width = 600
+        self.screen_height = 400
+        self.screen_resolution = (self.screen_width, self.screen_height)
+        self.bg_color = pygame.Color(100, 100, 100)
         self.fps = 60
