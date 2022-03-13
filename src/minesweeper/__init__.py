@@ -1,4 +1,5 @@
 # Copyright (C) 2022  Nikolaos Chatzikonstantinou <nchatz314@gmail.com>
+# Copyright (C) 2022  Nikolaos Zevgolis <nzevgolisda@gmail.com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -13,10 +14,21 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import sys
+import pygame
 
-def main():
-    """
-    Entry point for minesweeper.
-    """
-
-    return
+def runGame(config):
+    pygame.init()
+    pygame.display.set_caption(config.name)
+    screen = pygame.display.set_mode(config.screen_resolution)
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
+                sys.exit()
+        screen.fill(config.bg_color)
+        pygame.display.flip()
+        pygame.display.update()
+        clock = config.clock.tick(1)
+        print(clock)
